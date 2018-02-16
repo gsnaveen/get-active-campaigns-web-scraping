@@ -6,9 +6,9 @@ fread =  open('./data/urlList.txt','r')
 fwrite = open('./data/activeCampaigns.txt','w')
 fwrite.write('url'+'\t'+ 'iaPath' +'\t'+ 'campaignURL' + '\t'
                         + 'CAMPAIGN' 
-                        +'\t'+ 'COUNTRY_SITE'
+                        +'\t'+ 'COUNTRY'
                         +'\t'+ 'POSITION'
-                        +'\t'+ 'REFERRING_SITE'
+                        +'\t'+ 'REFERRING_URL'
                         +'\t'+ 'CREATIVE'+'\n')
 for url in fread:
     url = url.rstrip()
@@ -39,9 +39,9 @@ for url in fread:
                 
                 fwrite.write(url+'\t'+ iaPathvalue +'\t'+ campaignURL 
                         + '\t'+ myDict.get('CAMPAIGN','None')
-                        +'\t'+ myDict.get('COUNTRY_SITE','None')
+                        +'\t'+ myDict.get('COUNTRY','None')
                         +'\t'+ myDict.get('POSITION','None')
-                        +'\t'+ myDict.get('REFERRING_SITE','None')
+                        +'\t'+ myDict.get('REFERRING_URL','None')
                         +'\t'+ myDict.get('CREATIVE','None') + '\n')
         except:
             continue
