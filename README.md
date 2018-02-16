@@ -9,4 +9,4 @@ To find active campaigns for a  given list of URLs. This script can be called fr
 urlList.txt is the list of input URLs
 activeCampaigns.txt contains 'url','metatag' , 'campaignURL', 'CAMPAIGN','COUNTRY','POSITION','REFERRING_URL','CREATIVE'
 
-This can be easily configured to list your own campaign atributes
+This can be easily configured to list your own campaign attributes
