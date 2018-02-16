@@ -4,7 +4,7 @@ import re
 
 fread =  open('./data/urlList.txt','r')
 fwrite = open('./data/activeCampaigns.txt','w')
-fwrite.write('url'+'\t'+ 'iaPath' +'\t'+ 'campaignURL' + '\t'
+fwrite.write('url'+'\t'+ 'metatag' +'\t'+ 'campaignURL' + '\t'
                         + 'CAMPAIGN' 
                         +'\t'+ 'COUNTRY'
                         +'\t'+ 'POSITION'
@@ -16,14 +16,15 @@ for url in fread:
     #read URL
     soup = BeautifulSoup(html,'html.parser')
     #Get Meta tags
+    metatagValue = ''
     for tag in soup.find_all("meta"):
         try:
             name = tag['name']
         except:
             name = "Not Defined"
 
-        if name == 'iaPath':
-            iaPathvalue = tag['content']
+        if name == 'metatag':
+            metatagValue = tag['content']
 
     #Get Campaign href from HTML content 
     for link in soup.find_all('a'):
@@ -37,7 +38,7 @@ for url in fread:
                     key, value = keyvalue.split('=')
                     myDict[key] = value
                 
-                fwrite.write(url+'\t'+ iaPathvalue +'\t'+ campaignURL 
+                fwrite.write(url+'\t'+ metatagValue +'\t'+ campaignURL 
                         + '\t'+ myDict.get('CAMPAIGN','None')
                         +'\t'+ myDict.get('COUNTRY','None')
                         +'\t'+ myDict.get('POSITION','None')
