@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 
 fread =  open('./data/urlList.txt','r')
-fwrite = open('./data/urlListout.txt','w')
+fwrite = open('./data/activeCampaigns.txt','w')
 fwrite.write('url'+'\t'+ 'iaPath' +'\t'+ 'campaignURL' + '\t'
                         + 'CAMPAIGN' 
                         +'\t'+ 'COUNTRY_SITE'
