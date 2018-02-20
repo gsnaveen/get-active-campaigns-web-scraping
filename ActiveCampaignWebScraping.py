@@ -2,19 +2,19 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
-fread =  open('./data/urlList.txt','r')
-fwrite = open('./data/activeCampaigns.txt','w')
+fread =  open('./data/urlList.txt','r') # Read inout list of URLs
+fwrite = open('./data/activeCampaigns.txt','w') # Open a write file for output 
 fwrite.write('url'+'\t'+ 'metatag' +'\t'+ 'campaignURL' + '\t'
                         + 'CAMPAIGN' 
                         +'\t'+ 'COUNTRY'
                         +'\t'+ 'POSITION'
                         +'\t'+ 'REFERRING_URL'
-                        +'\t'+ 'CREATIVE'+'\n')
+                        +'\t'+ 'CREATIVE'+'\n') # Writing header of the file
 for url in fread:
     url = url.rstrip()
     html = urlopen(url)
     #read URL
-    soup = BeautifulSoup(html,'html.parser')
+    soup = BeautifulSoup(html,'html.parser') # Parse input URL content
     #Get Meta tags
     metatagValue = ''
     for tag in soup.find_all("meta"):
