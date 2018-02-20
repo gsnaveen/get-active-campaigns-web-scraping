@@ -10,4 +10,4 @@ list of input URLs
 ###### activeCampaigns.txt contains 
 'url','metatag' , 'campaignURL', 'CAMPAIGN','COUNTRY','POSITION','REFERRING_URL','CREATIVE'
 
-This can be easily configured to list your own campaign attributes
+This can be easily configured to list your own campaign attributes. You will need to change the matching pattern based on the format of the campaign url.
